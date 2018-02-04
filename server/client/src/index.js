@@ -1,4 +1,5 @@
 //This is for Redux Setup
+import 'materialize-css/dist/css/materialize.min.css'
 
 import React from 'react';
 import ReactDOM from 'react-dom';
