@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Payments from './Payments';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -13,9 +14,10 @@ class Header extends Component {
           <li> <a href="/auth/google">Login</a></li>
         );
       default:
-        return (
-          <li><a href="/api/logout">Logout</a></li>
-        );
+        return [
+          <li key="1"> <Payments /> </li>,
+          <li key="2"><a href="/api/logout">Logout</a></li>
+        ];
     }
   }
 
@@ -25,7 +27,7 @@ class Header extends Component {
       <nav>
         <div className="nav-wrapper">
           <Link
-            to={this.props.auth ? '/surveys' : '/'} 
+            to={this.props.auth ? '/surveys' : '/'}
             className="left brand-logo"
           >
             LetterBox
